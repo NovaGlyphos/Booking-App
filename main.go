@@ -9,7 +9,7 @@ import (
 func main(){
 	const conferenceTickets int = 50
 	var remainingTickets uint = 50
-	var bookings [50]string
+	var bookings []string
 
 	var firstName string
 	var lastName string
@@ -28,9 +28,12 @@ func main(){
 	remainingTickets = uint(conferenceTickets)-uint(numberOfTickets)
 	Printf("There are %v tickets remaining\n",remainingTickets)
 
-	bookings[0] = firstName+" "+lastName
-	Printf("Whole array: %v\n",bookings)
-	Printf("First element of array is %v\n",bookings[0])
-	Printf("Type of array is: %T",bookings)
-	Printf("Type of element in array: %T",bookings[0])
+	
+	bookings = append(bookings,firstName+" "+lastName)
+
+	Printf("Whole slice: %v\n",bookings)
+	Printf("First element of slice is %v\n",bookings[0])
+	Printf("Type of slice is: %T\n",bookings)
+	Printf("Type of element in slice: %T\n",bookings[0])
+	Printf("Size of slice is %v",len(bookings))
 }
